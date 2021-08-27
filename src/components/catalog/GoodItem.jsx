@@ -1,4 +1,5 @@
-import React from 'react';
+import React, {useContext} from 'react';
+import {ShopContext} from "../../context";
 
 const GoodItem = (props) => {
 
@@ -7,10 +8,10 @@ const GoodItem = (props) => {
         displayName: name,
         displayDescription: description,
         price,
-        displayAssets,
-        addToBasket
+        displayAssets
     } = props;
 
+    const {addToBasket} = useContext(ShopContext);
     const {regularPrice} = price;
 
     const handleClick = () => {
