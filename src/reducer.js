@@ -1,5 +1,4 @@
 export function reducer(state, {type, payload}) {
-    console.log('payload: ', payload);
     switch (type) {
         case 'SET_GOODS':
             return {
@@ -63,7 +62,7 @@ export function reducer(state, {type, payload}) {
             return {
                 ...state,
                 order: state.order.map(el => {
-                    if (el.id === payload) {
+                    if (el.id === payload ) {
                         const newQuantity = el.quantity - 1;
                         return {
                             ...el,

@@ -18,7 +18,7 @@ const BasketItem = (props) => {
     return (
         <li className="collection-item">
             {name}
-            <i className="material-icons item-count" onClick={() => decQuantity(id)}>remove</i> {quantity} {''}
+            <i className="material-icons item-count" onClick={() => decQuantity(id,quantity)}>remove</i> {quantity} {''}
             <i className="material-icons item-count" onClick={() => incQuantity(id)}>add</i>= {price * quantity} ₽
 
             <span className="secondary-content basket-delete "

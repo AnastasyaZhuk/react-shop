@@ -27,14 +27,15 @@ export const ContextProvider = ({children}) => {
     }
 
     value.incQuantity = (itemId) => {
-        console.log('incQuantity')
-
         dispatch({type: 'INC_QUANTITY', payload: itemId});
     }
 
-    value.decQuantity = (itemId) => {
-        console.log('decQuantity')
-        dispatch({type: 'DEC_QUANTITY', payload: itemId});
+    value.decQuantity = (itemId, quantity) => {
+        if (quantity === 1) {
+            dispatch({type: 'REMOVE_FROM_BASKET', payload: {id: itemId}});
+        } else {
+            dispatch({type: 'DEC_QUANTITY', payload: itemId});
+        }
     }
 
     value.handleBasketShow = () => {
